@@ -1,3 +1,3 @@
 # RDTelute
 
-Code associated with "Optimized Rapid Diagnostic Test Sequencing Enables Robust Transmission Inference" by Paull*, Petros* et al.
+Code associated with "Optimization and evaluation of viral genomic sequencing of SARS-CoV-2 rapid diagnostic tests: a laboratory and cohort-based study" by Paull*, Petros* et al.
