@@ -110,12 +110,15 @@ masked_ef_data = outbreaker_data(dates = ef_dates,
                                  dna = masked_ef_dna, 
                                  w_dens = mphn2_w_dens,
                                  f_dens = mphn2_f_dens)  
-mphn2_config = create_config(move_kappa = FALSE, # don't look for missing cases
-                             move_pi = FALSE, # don't estimate reporting
-                             init_pi = 1,
-                             n_iter = n_iter,# set reporting to 1
-                             find_import = FALSE, # don't look for additional imported cases
-                             init_tree = "star")  # star-like tree as starting point
+mu = 2e-6
+mphn2_config = create_config(move_kappa = FALSE, 
+                             move_pi = TRUE,
+                             prior_pi=c(1,4),
+                             init_mu = mu,
+                             move_mu = TRUE,
+                             n_iter = n_iter,
+                             find_import = TRUE, 
+                             init_tree = "star")  
 
 #run ob2
 mphn2_outbreaker_xbb = outbreaker(data = masked_xbb_data, config = mphn2_config)
